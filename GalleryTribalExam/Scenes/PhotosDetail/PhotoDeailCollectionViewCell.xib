@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoDeailCollectionViewCell" customModule="GalleryTribalExam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mRN-9s-dnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7kC-xU-Frt">
+                        <rect key="frame" x="160" y="10" width="30" height="100"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8c-5T-jHS">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="heartoff"/>
+                                <connections>
+                                    <action selector="tapFavorite:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hZU-yf-BiZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIW-BU-cka">
+                                <rect key="frame" x="0.0" y="35" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="like"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAq-hW-Z5G">
+                                <rect key="frame" x="0.0" y="70" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.2186650336" green="0.589355886" blue="0.85885614160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="FkB-T2-EGI"/>
+                            <constraint firstAttribute="height" constant="100" id="YGm-5W-mHx"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mRN-9s-dnZ" secondAttribute="bottom" id="Dgx-pu-UDg"/>
+                <constraint firstAttribute="trailing" secondItem="mRN-9s-dnZ" secondAttribute="trailing" id="SfM-sY-3eh"/>
+                <constraint firstItem="mRN-9s-dnZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="V6f-fF-UWT"/>
+                <constraint firstItem="7kC-xU-Frt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ZZG-92-5bS"/>
+                <constraint firstItem="mRN-9s-dnZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aav-jL-uFB"/>
+                <constraint firstAttribute="trailing" secondItem="7kC-xU-Frt" secondAttribute="trailing" constant="10" id="lw4-mn-YeQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="btnFavorite" destination="W8c-5T-jHS" id="Zvc-Rd-WbK"/>
+                <outlet property="btnLikes" destination="HIW-BU-cka" id="8Ir-BO-XTF"/>
+                <outlet property="imageView" destination="mRN-9s-dnZ" id="Mkx-Ff-6UC"/>
+                <outlet property="lblLikes" destination="tAq-hW-Z5G" id="0Hx-Fo-EEm"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heartoff" width="48" height="48"/>
+        <image name="like" width="50" height="50"/>
+    </resources>
+</document>
